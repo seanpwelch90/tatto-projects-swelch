@@ -53,6 +53,7 @@
 		background-color: #ffffff;
 		border: 1px solid;
 		transition: all 0.4s ease;
+    line-height: 35px;
 	}
 	.expanded {
 		color: #ffffff;
@@ -64,4 +65,6 @@
 		padding-top: 15px;
 		padding-bottom: 15px;
 	}
+
+
 </style>

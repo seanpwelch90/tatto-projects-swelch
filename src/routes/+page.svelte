@@ -1,22 +1,18 @@
 <script>
 	import Question from '../components/Question.svelte';
-  let questionArray = Array(7).fill(null).map(() => {
-    const question = {
-      question: "Lorem psum Dolor Sit Amet, Consectetur Adipiscing Elst?",
-      answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas velit urna, placerat vitae est vel, sodales tristique metus. Suspendisse molestie nulla purus, nec placerat est pulvinar eget. Pellentesque lobortis ante luctus risus tincidunt aliquet. Duis in nibh tellus. Proin dignissim enim quis libero efficitur lacinia."
-    }
-    return question
-  })
+	let questionArray = Array(7)
+		.fill(null)
+		.map(() => ({
+			question: 'Lorem psum Dolor Sit Amet, Consectetur Adipiscing Elst?',
+			answer:
+				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas velit urna, placerat vitae est vel, sodales tristique metus. Suspendisse molestie nulla purus, nec placerat est pulvinar eget. Pellentesque lobortis ante luctus risus tincidunt aliquet. Duis in nibh tellus. Proin dignissim enim quis libero efficitur lacinia.'
+		}));
 </script>
 
 <div class="page-wrapper">
 	<div class="question-wrapper">
 		{#each questionArray as question}
-			<Question
-				class="question"
-				title={question.question}
-				detail={question.answer}
-			/>
+			<Question class="question" title={question.question} detail={question.answer} />
 		{/each}
 	</div>
 </div>
@@ -54,12 +50,10 @@
 			padding: 12px 25px 12px 25px;
 			max-width: 80vw;
 			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-			border-radius: 20px;
+			border-radius: 10px;
 			background-color: #ffffff;
 			margin: 45px auto auto;
 		}
-
-		/* Styles for iPad Mini in portrait/landscape mode */
 	}
 
 	@media only screen and (min-width: 769px) {
@@ -67,9 +61,9 @@
 			padding: 25px 50px 25px 75px;
 			max-width: 80vw;
 			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-			border-radius: 20px;
+			border-radius: 10px;
 			background-color: #ffffff;
-			margin: 45px auto auto;
+			margin: 50px auto auto;
 		}
 	}
 </style>

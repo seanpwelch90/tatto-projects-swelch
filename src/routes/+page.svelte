@@ -10,11 +10,13 @@
 </script>
 
 <div class="page-wrapper">
-	<div class="question-wrapper">
-		{#each questionArray as question}
-			<Question class="question" title={question.question} detail={question.answer} />
-		{/each}
-	</div>
+	<main class="content">
+		<section class="questions-wrapper">
+			{#each questionArray as question}
+				<Question class="question" title={question.question} detail={question.answer} />
+			{/each}
+		</section>
+	</main>
 </div>
 
 <style>
@@ -26,38 +28,43 @@
 		--primary-color: #608bc5;
 	}
 	:global(body) {
-		background: linear-gradient(to bottom, #ffffff 50%, #f6f8fc 50%);
 		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 			Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	}
 
-	.question-wrapper :global(.question:not(:last-child)) {
-		border-bottom: 1px solid var(--primary-color);
-	}
 	.page-wrapper {
-		min-height: 100vh;
+		background: linear-gradient(to bottom, #ffffff 50%, #f6f8fc 50%);
+	}
+
+	.content {
+		height: 100vh;
+		width: 100vw;
+		overflow: auto;
+	}
+
+	.questions-wrapper :global(.question:not(:last-child)) {
+		border-bottom: 1px solid var(--primary-color);
 	}
 
 	@media only screen and (max-width: 568px) {
-		.question-wrapper {
+		.questions-wrapper {
 			background-color: #ffffff;
-			max-width: 100vw;
 		}
 	}
 
 	@media only screen and (min-width: 569px) and (max-width: 768px) {
-		.question-wrapper {
+		.questions-wrapper {
 			padding: 12px 25px 12px 25px;
 			max-width: 80vw;
 			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 			border-radius: 10px;
 			background-color: #ffffff;
-			margin: 45px auto auto;
+			margin: 25px auto auto;
 		}
 	}
 
 	@media only screen and (min-width: 769px) {
-		.question-wrapper {
+		.questions-wrapper {
 			padding: 25px 50px 25px 75px;
 			max-width: 80vw;
 			box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);

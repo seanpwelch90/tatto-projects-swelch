@@ -24,9 +24,6 @@
 </div>
 
 <style>
-	:global(:root) {
-		--primary-color: #608bc5;
-	}
 	.detail p {
 		font-size: 12px;
 		line-height: 1.8;
@@ -37,7 +34,7 @@
 	.title-wrapper {
 		display: flex;
 		justify-content: space-between;
-		align-items: baseline;
+		align-items: center;
 	}
 	.title-wrapper h2 {
 		font-size: 14px;
@@ -79,11 +76,6 @@
 	@media only screen and (max-width: 568px) {
 		.title-wrapper h2 {
 			margin-left: 25px;
-		}
-
-		.title-wrapper {
-			display: flex;
-			justify-content: space-between;
 		}
 
 		.expand-button {
